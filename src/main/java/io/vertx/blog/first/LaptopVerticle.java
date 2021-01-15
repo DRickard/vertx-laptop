@@ -19,7 +19,7 @@ import io.vertx.ext.sql.SQLConnection;
 import java.util.List;
 import java.util.stream.Collectors;
 
-public class MyFirstVerticle extends AbstractVerticle {
+public class LaptopVerticle extends AbstractVerticle {
     private JDBCClient jdbc;
     private JsonObject config;
     private JsonObject output;

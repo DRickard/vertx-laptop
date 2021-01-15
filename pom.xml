@@ -4,7 +4,7 @@
                       http://maven.apache.org/xsd/maven-4.0.0.xsd">
   <modelVersion>4.0.0</modelVersion>
   <groupId>io.vertx.blog</groupId>
-  <artifactId>my-first-app</artifactId>
+  <artifactId>laptop-app</artifactId>
   <version>1.0-SNAPSHOT</version>
 
    <repositories>
@@ -17,7 +17,7 @@
       <url>https://repo1.maven.org/maven2/</url>
     </repository>
   </repositories>
-
+  
   <dependencies>
     <dependency>
       <groupId>io.vertx</groupId>
@@ -25,26 +25,25 @@
       <version>3.9.4</version>
     </dependency>
     <dependency>
-    <groupId>io.vertx</groupId>
+      <groupId>io.vertx</groupId>
       <artifactId>vertx-web</artifactId>
       <version>3.9.4</version>
     </dependency>
     <dependency>
-  <groupId>io.vertx</groupId>
-  <artifactId>vertx-jdbc-client</artifactId>
-  <version>3.1.0</version>
-</dependency>
-	<dependency>
-		<groupId>com.oracle.ojdbc</groupId>
-		<artifactId>ojdbc8</artifactId>
-		<version>19.3.0.0</version>
-	</dependency>
-	<dependency>
-		<groupId>com.oracle.ojdbc</groupId>
-		<artifactId>ucp</artifactId>
-		<version>19.3.0.0</version>
-	</dependency>
-
+      <groupId>io.vertx</groupId>
+      <artifactId>vertx-jdbc-client</artifactId>
+      <version>3.1.0</version>
+    </dependency>
+    <dependency>
+      <groupId>com.oracle.ojdbc</groupId>
+      <artifactId>ojdbc8</artifactId>
+      <version>19.3.0.0</version>
+    </dependency>
+    <dependency>
+      <groupId>com.oracle.ojdbc</groupId>
+      <artifactId>ucp</artifactId>
+      <version>19.3.0.0</version>
+    </dependency>
   </dependencies>
 
   <build>
@@ -57,7 +56,7 @@
           <target>1.8</target>
         </configuration>
       </plugin>
-            <plugin>
+      <plugin>
         <groupId>io.fabric8</groupId>
         <artifactId>vertx-maven-plugin</artifactId>
         <version>1.0.13</version>
@@ -77,29 +76,29 @@
       <plugin>
         <groupId>org.apache.maven.plugins</groupId>
         <artifactId>maven-shade-plugin</artifactId>
-  <version>2.3</version>
-  <executions>
-    <execution>
-      <phase>package</phase>
-      <goals>
-        <goal>shade</goal>
-      </goals>
-      <configuration>
-        <transformers>
-          <transformer
-            implementation="org.apache.maven.plugins.shade.resource.ManifestResourceTransformer">
-            <manifestEntries>
-              <Main-Class>io.vertx.core.Starter</Main-Class>
-              <Main-Verticle>io.vertx.blog.first.MyFirstVerticle</Main-Verticle>
-            </manifestEntries>
-          </transformer>
-        </transformers>
-        <artifactSet/>
-        <outputFile>${project.build.directory}/${project.artifactId}-${project.version}-fat.jar</outputFile>
-      </configuration>
-    </execution>
-  </executions>
-</plugin>
+        <version>2.3</version>
+        <executions>
+          <execution>
+            <phase>package</phase>
+            <goals>
+              <goal>shade</goal>
+            </goals>
+            <configuration>
+              <transformers>
+                <transformer
+                  implementation="org.apache.maven.plugins.shade.resource.ManifestResourceTransformer">
+                  <manifestEntries>
+                    <Main-Class>io.vertx.core.Starter</Main-Class>
+                    <Main-Verticle>io.vertx.blog.first.LaptopVerticle</Main-Verticle>
+                  </manifestEntries>
+                </transformer>
+              </transformers>
+              <artifactSet/>
+              <outputFile>${project.build.directory}/${project.artifactId}-${project.version}-fat.jar</outputFile>
+            </configuration>
+          </execution>
+        </executions>
+      </plugin>
     </plugins>
   </build>
 
