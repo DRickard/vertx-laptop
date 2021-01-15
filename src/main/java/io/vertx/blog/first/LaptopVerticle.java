@@ -30,7 +30,7 @@ public class LaptopVerticle extends AbstractVerticle {
 		.put("url","jdbc:oracle:thin:@ils-db-prod.library.ucla.edu:1521:VGER")
 		.put("driver_class", "oracle.jdbc.OracleDriver")
 		.put("user", "vger_preaddb")
-		.put("password", "vger_preaddb_pwd");
+		.put("password", "vger_preaddb");
 	jdbc = JDBCClient.createShared(vertx, config);
 	startBackend(
             (connection) -> confirmConnection(connection,
