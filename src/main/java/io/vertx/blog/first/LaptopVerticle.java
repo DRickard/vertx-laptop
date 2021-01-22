@@ -27,10 +27,10 @@ public class LaptopVerticle extends AbstractVerticle {
     @Override
     public void start(Future<Void> fut) {
         config = new JsonObject()
-		.put("url","jdbc:oracle:thin:@ils-db-prod.library.ucla.edu:1521:VGER")
+		.put("url","jdbc:oracle:thin:@my.server.com:1521:SID")
 		.put("driver_class", "oracle.jdbc.OracleDriver")
-		.put("user", "vger_preaddb")
-		.put("password", "vger_preaddb");
+		.put("user", "user")
+		.put("password", "pass");
 	jdbc = JDBCClient.createShared(vertx, config);
 	startBackend(
             (connection) -> confirmConnection(connection,
